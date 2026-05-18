@@ -6,769 +6,611 @@
 <title>早春呈水部张十八员外 — 韩愈</title>
 <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&display=swap');
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body {
-    font-family: 'ZCOOL XiaoWei', 'KaiTi', '楷体', 'STKaiti', serif;
-    background: linear-gradient(160deg, #fdf6e3 0%, #f5e6c8 50%, #e8d5a3 100%);
+body {
+    font-family: 'Noto Serif SC', 'ZCOOL XiaoWei', serif;
+    background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 50%, #e0f2f1 100%);
     min-height: 100vh;
-    padding: 0 16px 40px;
-    color: #3d2e1e;
-  }
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
 
-  /* ===== Decorative background elements ===== */
-  body::before, body::after {
-    content: '';
-    position: fixed;
-    pointer-events: none;
-    opacity: 0.08;
-    z-index: 0;
-  }
-  body::before {
-    top: 40px; left: 20px;
-    width: 120px; height: 120px;
-    background: radial-gradient(circle, #D44942 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  body::after {
-    bottom: 60px; right: 20px;
-    width: 100px; height: 100px;
-    background: radial-gradient(circle, #D44942 0%, transparent 70%);
-    border-radius: 50%;
-  }
-
-  .container {
-    max-width: 680px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* ===== Top Nav ===== */
-  .top-nav {
-    padding: 16px 0 8px;
-    font-size: 18px;
-  }
-  .top-nav a {
-    text-decoration: none;
-    color: #D44942;
-    font-weight: bold;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255,255,255,0.6);
-    padding: 6px 16px;
-    border-radius: 20px;
-    backdrop-filter: blur(4px);
-    transition: all 0.3s;
-    box-shadow: 0 2px 8px rgba(212,73,66,0.12);
-  }
-  .top-nav a:hover {
-    background: #D44942;
-    color: #fff;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(212,73,66,0.3);
-  }
-
-  /* ===== Poem Title Section ===== */
-  .poem-header {
-    text-align: center;
-    padding: 28px 0 10px;
-    position: relative;
-  }
-  .poem-header::after {
-    content: '🐸 ✦ ♟ ✦ 🏮';
-    display: block;
-    font-size: 22px;
-    letter-spacing: 6px;
-    margin-top: 6px;
-    opacity: 0.5;
-  }
-  .poem-title {
-    font-family: 'Ma Shan Zheng', 'KaiTi', '楷体', serif;
-    font-size: 48px;
-    color: #A8302A;
-    text-shadow: 2px 2px 0 rgba(212,73,66,0.3);
-    line-height: 1.2;
-  }
-  .poem-subtitle {
-    font-size: 18px;
-    color: #8a7a5a;
-    margin-top: 4px;
-    letter-spacing: 2px;
-  }
-
-  /* ===== Poem Text ===== */
-  .poem-text {
-    text-align: center;
-    padding: 24px 20px;
-    background: rgba(255,255,255,0.45);
-    border-radius: 24px;
-    backdrop-filter: blur(6px);
-    box-shadow: 0 4px 20px rgba(212,73,66,0.08);
-    margin: 16px 0;
-    border: 2px solid rgba(212,73,66,0.12);
-  }
-  .poem-text p {
-    font-size: 26px;
-    line-height: 2.6;
-    letter-spacing: 4px;
-    color: #3d2e1e;
-  }
-  .poem-text p + p {
-    margin-top: 4px;
-  }
-  .poem-text ruby {
-    ruby-align: center;
-  }
-  .poem-text ruby rt {
-    font-size: 13px;
-    color: #7a6a4a;
-    letter-spacing: 0;
-    font-weight: normal;
-  }
-
-  /* ===== Read Aloud Button ===== */
-  .read-btn-wrap {
-    text-align: center;
-    margin: 12px 0 20px;
-  }
-  .read-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 40px;
-    font-size: 22px;
-    font-family: inherit;
-    background: linear-gradient(135deg, #D44942, #E87A74);
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 4px 16px rgba(212,73,66,0.35);
-    transition: all 0.3s;
+.container {
+    max-width: 640px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 32px;
+    padding: 30px 24px 40px;
+    box-shadow: 0 8px 32px rgba(233, 30, 99, 0.12);
+    backdrop-filter: blur(8px);
     position: relative;
     overflow: hidden;
-  }
-  .read-btn::after {
-    content: '';
+}
+
+.container::before {
+    content: '🌿';
     position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
-    transform: translateX(-100%);
-    transition: transform 0.6s;
-  }
-  .read-btn:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 6px 24px rgba(212,73,66,0.45);
-  }
-  .read-btn:active {
-    transform: scale(0.97);
-  }
-  .read-btn.speaking {
-    animation: pulse 1s ease-in-out infinite;
-  }
-  .read-btn.speaking::after {
-    transform: translateX(100%);
-  }
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 4px 16px rgba(212,73,66,0.35); transform: scale(1); }
-    50% { box-shadow: 0 4px 32px rgba(212,73,66,0.6); transform: scale(1.04); }
-  }
+    top: 10px; right: 20px;
+    font-size: 36px;
+    opacity: 0.3;
+    animation: float 4s ease-in-out infinite;
+}
 
-  /* ===== Notes & Translation ===== */
-  .info-section {
-    background: rgba(255,255,255,0.45);
-    border-radius: 20px;
-    padding: 20px 22px;
-    margin: 12px 0;
-    backdrop-filter: blur(4px);
-    border: 2px solid rgba(212,73,66,0.12);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-  }
-  .info-section .label {
+.container::after {
+    content: '🍃';
+    position: absolute;
+    bottom: 20px; left: 16px;
+    font-size: 28px;
+    opacity: 0.25;
+    animation: float 5s ease-in-out infinite 1s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+.back-link {
+    display: inline-block;
+    color: #00bfa5;
+    text-decoration: none;
     font-size: 16px;
-    color: #8a7a5a;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 6px;
-    letter-spacing: 2px;
-  }
-  .info-section .label .emoji-icon {
-    font-size: 20px;
-  }
-  .info-section p {
-    font-size: 19px;
-    line-height: 1.7;
-    color: #4a3a2a;
-  }
+    margin-bottom: 16px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(233, 30, 99, 0.08);
+    transition: all 0.2s;
+}
 
-  /* ===== Character Cards ===== */
-  .cards-section {
-    margin: 16px 0;
-  }
-  .cards-section h3 {
-    font-size: 20px;
-    color: #A8302A;
+.back-link:hover {
+    background: rgba(233, 30, 99, 0.18);
+    transform: translateX(-3px);
+}
+
+.poem-header {
     text-align: center;
-    margin-bottom: 14px;
-    letter-spacing: 2px;
-  }
-  .cards-grid {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .flip-card {
-    width: 120px;
-    height: 160px;
+    margin-bottom: 20px;
+}
+
+.poem-title {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 36px;
+    color: #00897b;
+    margin-bottom: 4px;
+    font-weight: 400;
+}
+
+.poem-subtitle {
+    font-size: 16px;
+    color: #00bfa5;
+    opacity: 0.7;
+}
+
+.poem-text {
+    font-size: 24px;
+    line-height: 2.4;
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px 10px;
+    background: rgba(248, 187, 208, 0.12);
+    border-radius: 20px;
+    position: relative;
+}
+
+.poem-text ruby {
+    ruby-align: center;
+}
+
+.poem-text rt {
+    font-size: 14px;
+    color: #00bfa5;
+    opacity: 0.75;
+    font-family: 'Noto Serif SC', serif;
+}
+
+.read-btn {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 12px 32px;
+    font-size: 18px;
+    font-family: 'Noto Serif SC', serif;
+    background: linear-gradient(135deg, #00bfa5, #00897b);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(233, 30, 99, 0.3);
+}
+
+.read-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 24px rgba(233, 30, 99, 0.4);
+}
+
+.read-btn:active { transform: scale(0.97); }
+
+.section {
+    margin: 16px 0;
+    padding: 16px 18px;
+    border-radius: 16px;
+    background: rgba(248, 187, 208, 0.08);
+}
+
+.section-title {
+    font-size: 18px;
+    color: #00897b;
+    margin-bottom: 8px;
+}
+
+.section-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.flip-card {
+    aspect-ratio: 3 / 4;
     perspective: 800px;
     cursor: pointer;
-  }
-  .flip-card-inner {
+}
+
+.flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.6s cubic-bezier(0.23,1,0.32,1);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
-  }
-  .flip-card.flipped .flip-card-inner {
+}
+
+.flip-card.flipped .flip-card-inner {
     transform: rotateY(180deg);
-  }
-  .flip-card-front, .flip-card-back {
+}
+
+.flip-card-front, .flip-card-back {
     position: absolute;
-    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 18px;
-    backface-visibility: hidden;
-    border: 2px solid rgba(212,73,66,0.15);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  }
-  .flip-card-front {
-    background: linear-gradient(145deg, #faf8f0, #f0e8d0);
-    color: #3d2e1e;
-  }
-  .flip-card-front .char {
-    font-size: 52px;
-    font-family: 'Ma Shan Zheng', 'KaiTi', serif;
-    line-height: 1;
-  }
-  .flip-card-front .pinyin-label {
-    font-size: 16px;
-    color: #7a6a4a;
-    margin-top: 4px;
-  }
-  .flip-card-back {
-    background: linear-gradient(145deg, #D44942, #E87A74);
-    color: #fff;
-    transform: rotateY(180deg);
     padding: 12px;
-    text-align: center;
-  }
-  .flip-card-back p {
-    font-size: 15px;
-    line-height: 1.5;
-  }
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.12);
+}
 
-  /* ===== Fill-in-the-blank Game ===== */
-  .game-section {
-    background: rgba(255,255,255,0.5);
-    border-radius: 24px;
-    padding: 20px;
-    margin: 16px 0;
-    backdrop-filter: blur(4px);
-    border: 2px solid rgba(212,73,66,0.12);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-  }
-  .game-section h3 {
-    font-size: 20px;
-    color: #A8302A;
+.flip-card-front {
+    background: linear-gradient(135deg, #b2dfdb, #80cbc4);
+    color: white;
+}
+
+.flip-card-front .char {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 56px;
+    line-height: 1;
+}
+
+.flip-card-front .char-pinyin {
+    font-size: 18px;
+    margin-top: 6px;
+    opacity: 0.9;
+}
+
+.flip-card-back {
+    background: white;
+    transform: rotateY(180deg);
+    border: 2px solid #b2dfdb;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
     text-align: center;
-    margin-bottom: 14px;
-    letter-spacing: 2px;
-  }
-  .game-text {
-    font-size: 24px;
+}
+
+.flip-hint {
     text-align: center;
+    font-size: 13px;
+    color: #00bfa5;
+    opacity: 0.6;
+    margin: 4px 0 8px;
+}
+
+/* 填空游戏 */
+.blank-game { margin-top: 12px; }
+
+.blank-text {
+    font-size: 22px;
     line-height: 2.2;
-    letter-spacing: 3px;
-    margin-bottom: 16px;
-    color: #3d2e1e;
-  }
-  .game-text .blank {
+    text-align: center;
+    background: rgba(248, 187, 208, 0.08);
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+}
+
+.blank-text .blank-slot {
     display: inline-block;
     min-width: 50px;
-    border-bottom: 3px dashed #b8a88a;
+    border-bottom: 3px dashed #00bfa5;
     margin: 0 2px;
-    padding: 0 6px;
-    color: #D44942;
-    font-weight: bold;
+    padding: 0 4px;
+    cursor: pointer;
     transition: all 0.3s;
-  }
-  .game-text .blank.filled {
-    border-bottom-color: #D44942;
-    animation: popFill 0.3s ease;
-  }
-  @keyframes popFill {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.3); color: #D44942; }
-    100% { transform: scale(1); }
-  }
-  .options-wrap {
+}
+
+.blank-text .blank-slot.filled {
+    border-bottom-style: solid;
+    color: #00897b;
+    font-weight: bold;
+}
+
+.candidate-btns {
     display: flex;
-    gap: 12px;
     justify-content: center;
+    gap: 12px;
     flex-wrap: wrap;
     margin: 12px 0;
-  }
-  .option-btn {
-    width: 54px;
-    height: 54px;
-    font-size: 28px;
-    font-family: 'Ma Shan Zheng', 'KaiTi', serif;
-    background: linear-gradient(145deg, #faf8f0, #f0e8d0);
-    border: 2px solid rgba(212,73,66,0.2);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.25s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .option-btn:hover {
-    transform: scale(1.1);
-    border-color: #D44942;
-    box-shadow: 0 4px 16px rgba(212,73,66,0.25);
-  }
-  .option-btn:active {
-    transform: scale(0.92);
-  }
-  .option-btn.used {
-    opacity: 0.3;
-    cursor: default;
-    transform: scale(0.85);
-    pointer-events: none;
-  }
-  .game-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    margin-top: 14px;
-    flex-wrap: wrap;
-  }
-  .reset-btn {
-    padding: 8px 24px;
-    font-size: 16px;
-    font-family: inherit;
-    background: linear-gradient(135deg, #D44942, #E87A74);
-    color: #fff;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 3px 10px rgba(212,73,66,0.3);
-    transition: all 0.3s;
-  }
-  .reset-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 18px rgba(212,73,66,0.4);
-  }
-  .game-success {
-    font-size: 28px;
-    color: #D44942;
-    font-weight: bold;
-    display: none;
-    animation: successPop 0.6s ease;
-  }
-  .game-success.show {
-    display: inline-block;
-  }
-  @keyframes successPop {
-    0% { transform: scale(0); opacity: 0; }
-    50% { transform: scale(1.3); }
-    100% { transform: scale(1); opacity: 1; }
-  }
-  .stars-anim {
-    display: none;
-    font-size: 36px;
-    text-align: center;
-    margin-top: 8px;
-    animation: starsSparkle 1.2s ease infinite alternate;
-  }
-  .stars-anim.show {
-    display: block;
-  }
-  @keyframes starsSparkle {
-    0% { transform: scale(1); letter-spacing: 2px; }
-    100% { transform: scale(1.05); letter-spacing: 8px; }
-  }
+}
 
-  /* ===== Responsive ===== */
-  @media (max-width: 480px) {
-    .poem-title { font-size: 36px; }
-    .poem-text p { font-size: 22px; line-height: 2.4; }
-    .poem-text ruby rt { font-size: 11px; }
-    .flip-card { width: 100px; height: 140px; }
-    .flip-card-front .char { font-size: 42px; }
-    .game-text { font-size: 20px; }
-    .option-btn { width: 46px; height: 46px; font-size: 24px; }
-    .read-btn { font-size: 18px; padding: 12px 30px; }
-  }
+.candidate-btn {
+    width: 52px;
+    height: 52px;
+    font-size: 26px;
+    font-family: 'Ma Shan Zheng', cursive;
+    border: 3px solid #80cbc4;
+    background: white;
+    color: #00897b;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.candidate-btn:hover {
+    background: #e0f2f1;
+    transform: scale(1.1);
+}
+
+.candidate-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.reset-btn {
+    display: block;
+    margin: 12px auto 0;
+    padding: 10px 24px;
+    font-size: 16px;
+    font-family: 'Noto Serif SC', serif;
+    background: rgba(233, 30, 99, 0.1);
+    color: #00897b;
+    border: 2px solid #80cbc4;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.reset-btn:hover { background: rgba(233, 30, 99, 0.2); }
+
+/* 庆祝 */
+.celebrate-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.celebrate-overlay.show { display: flex; }
+
+.celebrate-box {
+    background: white;
+    border-radius: 32px;
+    padding: 48px 40px;
+    text-align: center;
+    box-shadow: 0 16px 64px rgba(0,0,0,0.2);
+    animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.celebrate-box .emoji { font-size: 72px; display: block; margin-bottom: 12px; }
+.celebrate-box .msg { font-size: 28px; font-family: 'Ma Shan Zheng', cursive; color: #00897b; }
+.celebrate-box .sub-msg { font-size: 16px; color: #888; margin-top: 8px; }
+.celebrate-box .close-btn {
+    margin-top: 20px; padding: 10px 32px; font-size: 18px;
+    font-family: 'Noto Serif SC', serif;
+    background: linear-gradient(135deg, #00bfa5, #00897b);
+    color: white; border: none; border-radius: 24px; cursor: pointer;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); }
+    70% { transform: scale(0.95); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.confetti-container {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 1001; overflow: hidden;
+}
+
+.confetti {
+    position: absolute; width: 10px; height: 10px; border-radius: 2px;
+    animation: confettiFall 3s ease-out forwards;
+}
+
+@keyframes confettiFall {
+    0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@media (max-width: 480px) {
+    .container { padding: 20px 16px; border-radius: 24px; }
+    .poem-title { font-size: 28px; }
+    .poem-text { font-size: 20px; padding: 14px 8px; }
+    .poem-text rt { font-size: 12px; }
+    .cards-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .flip-card-front .char { font-size: 40px; }
+    .blank-text { font-size: 18px; }
+}
 </style>
 </head>
 <body>
 
 <div class="container">
 
-  <!-- ===== 1. Top Nav ===== -->
-  <div class="top-nav">
-    <a href="index.html">🏠 返回日历</a>
-  </div>
+<a href="https://chenglin87119-ux.github.io/classical_Chinese_poetry/" class="back-link">← 返回古诗日历</a>
 
-  <!-- ===== 2. Poem Title ===== -->
-  <div class="poem-header">
+<div class="poem-header">
     <div class="poem-title">早春呈水部张十八员外</div>
     <div class="poem-subtitle">唐 · 韩愈</div>
-  </div>
-
-  <!-- ===== 3. Poem Text with Ruby ===== -->
-  <div class="poem-text">
-    <p>
-      <ruby>天<rt>tian1</rt></ruby><ruby>街<rt>jie1</rt></ruby><ruby>小<rt>xiao3</rt></ruby><ruby>雨<rt>yu3</rt></ruby><ruby>润<rt>run4</rt></ruby><ruby>如<rt>ru2</rt></ruby><ruby>酥<rt>su1</rt></ruby>，<ruby>草<rt>cao3</rt></ruby><ruby>色<rt>se4</rt></ruby><ruby>遥<rt>yao2</rt></ruby><ruby>看<rt>kan4</rt></ruby><ruby>近<rt>jin4</rt></ruby><ruby>却<rt>que4</rt></ruby><ruby>无<rt>wu2</rt></ruby>。
-    </p>
-    <p>
-      <ruby>最<rt>shi4</rt></ruby><ruby>是<rt>yi1</rt></ruby><ruby>一<rt>nian2</rt></ruby><ruby>年<rt>chun1</rt></ruby><ruby>春<rt>hao3</rt></ruby><ruby>好<rt>chu4</rt></ruby><ruby>处<rt>，</rt></ruby>，<ruby>绝<rt>sheng4</rt></ruby><ruby>胜<rt>yan1</rt></ruby><ruby>烟<rt>liu3</rt></ruby><ruby>柳<rt>man3</rt></ruby><ruby>满<rt>huang2</rt></ruby><ruby>皇<rt>dou1</rt></ruby><ruby>都<rt>。</rt></ruby>
-    </p>
 </div>
 
-  <!-- ===== 4. Read Aloud Button ===== -->
-  <div class="read-btn-wrap">
-    <button class="read-btn" id="readBtn">🔊 听我朗读</button>
-  </div>
+<button class="read-btn" onclick="responsiveVoice.speak(`天街小雨润如酥，草色遥看近却无。 最是一年春好处，绝胜烟柳满皇都。`, 'Chinese Female', {rate: 0.8})">🔊 听我朗读</button>
 
-  <!-- ===== 5. Notes ===== -->
-  <div class="info-section">
-    <span class="label"><span class="emoji-icon">💡</span> 小注释</span>
-    <p>
-      《早春呈水部张十八员外》是唐诗人韩愈的作品。
-    </p>
-  </div>
+<div class="poem-text">
+<ruby>天<rt>tiān</rt></ruby><ruby>街<rt>jiē</rt></ruby><ruby>小<rt>xiǎo</rt></ruby><ruby>雨<rt>yǔ</rt></ruby><ruby>润<rt>rùn</rt></ruby><ruby>如<rt>rú</rt></ruby><ruby>酥<rt>sū</rt></ruby>，<ruby>草<rt>cǎo</rt></ruby><ruby>色<rt>sè</rt></ruby><ruby>遥<rt>yáo</rt></ruby><ruby>看<rt>kàn</rt></ruby><ruby>近<rt>jìn</rt></ruby><ruby>却<rt>què</rt></ruby><ruby>无<rt>wú</rt></ruby>。<br>
+<ruby>最<rt>zuì</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>一<rt>yī</rt></ruby><ruby>年<rt>nián</rt></ruby><ruby>春<rt>chūn</rt></ruby><ruby>好<rt>hǎo</rt></ruby><ruby>处<rt>chù</rt></ruby>，<ruby>绝<rt>jué</rt></ruby><ruby>胜<rt>shèng</rt></ruby><ruby>烟<rt>yān</rt></ruby><ruby>柳<rt>liǔ</rt></ruby><ruby>满<rt>mǎn</rt></ruby><ruby>皇<rt>huáng</rt></ruby><ruby>都<rt>dōu</rt></ruby>。
+</div>
 
-  <!-- ===== 6. Translation ===== -->
-  <div class="info-section">
-    <span class="label"><span class="emoji-icon">📖</span> 白话译文</span>
-    <p>
-      （注释和译文待生成）
-    </p>
-  </div>
+<div class="section">
+    <div class="section-title">💡 小注释</div>
+    <div class="section-content">《早春呈水部张十八员外》是唐诗人韩愈的作品。早春的小雨像酥油一样细滑，草色远远看去有一点点绿。</div>
+</div>
 
-  <!-- ===== 7. Character Cards ===== -->
-  <div class="cards-section">
-    <h3>📖 识字卡片</h3>
+<div class="section">
+    <div class="section-title">📖 白话译文</div>
+    <div class="section-content">长安街上下起了细细的春雨，它像酥油一样滋润着大地。远远望去，草色青青一片，走近一看却什么也没有。这是一年中最美的景色，远远胜过绿柳满城的晚春。</div>
+</div>
+
+<div class="section">
+    <div class="section-title">📖 识字卡片</div>
+    <p class="flip-hint">👆 点击卡片翻转，看看背面是什么</p>
     <div class="cards-grid" id="cardsGrid"></div>
-  </div>
+</div>
 
-  <!-- ===== 8. Fill-in-the-blank Game ===== -->
-  <div class="game-section">
-    <h3>✍️ 填空小游戏</h3>
-    <div class="game-text" id="gameText"></div>
-    <div class="options-wrap" id="optionsWrap"></div>
-    <div class="game-footer">
-      <button class="reset-btn" id="resetGameBtn">🔄 重新开始</button>
-      <span class="game-success" id="gameSuccess">好棒！🌟</span>
+<div class="section">
+    <div class="section-title">✍️ 背诵填空</div>
+    <div class="blank-game">
+        <div class="blank-text" id="blankText"></div>
+        <div class="candidate-btns" id="candidateBtns"></div>
+        <button class="reset-btn" onclick="resetGame()">🔄 重新开始</button>
     </div>
-    <div class="stars-anim" id="starsAnim">✨ 🌟 ⭐ ✨ 🌟</div>
-  </div>
+</div>
 
+</div>
+
+<div class="celebrate-overlay" id="celebrateOverlay">
+    <div class="celebrate-box">
+        <span class="emoji">🎉</span>
+        <div class="msg">好棒！全都对了！</div>
+        <div class="sub-msg">你真是太厉害啦 🌟</div>
+        <button class="close-btn" onclick="closeCelebrate()">再来一次</button>
+    </div>
 </div>
 
 <script>
-// ===== Poem Data =====
-const POEM = {
-  title: "早春呈水部张十八员外",
-  author: "韩愈",
-  dynasty: "唐",
-  fullText: "天街小雨润如酥，草色遥看近却无。最是一年春好处，绝胜烟柳满皇都。",
-  lines: ["天街小雨润如酥，草色遥看近却无。", "最是一年春好处，绝胜烟柳满皇都。"]
-};
+// 识字卡片数据
+const cards = [{"char": "年", "meaning": "年，一年的时间，春夏秋冬。"}, {"char": "如", "meaning": "「如」是一个汉字，多读几遍记住它吧！"}, {"char": "色", "meaning": "颜色，红黄蓝绿都是颜色。"}];
 
-// ===== Read Aloud =====
-const readBtn = document.getElementById('readBtn');
-let isSpeaking = false;
-
-readBtn.addEventListener('click', function() {
-  if (isSpeaking) {
-    responsiveVoice.cancel();
-    isSpeaking = false;
-    readBtn.classList.remove('speaking');
-    readBtn.textContent = '🔊 听我朗读';
-    return;
-  }
-
-  const text = POEM.fullText;
-  if (typeof responsiveVoice !== 'undefined' && responsiveVoice.isPlaying) {
-    responsiveVoice.cancel();
-  }
-
-  readBtn.classList.add('speaking');
-  readBtn.textContent = '⏹ 停止';
-  isSpeaking = true;
-
-  responsiveVoice.speak(text, 'Chinese Female', {
-    rate: 0.8,
-    pitch: 1.0,
-    onend: function() {
-      isSpeaking = false;
-      readBtn.classList.remove('speaking');
-      readBtn.textContent = '🔊 听我朗读';
-    },
-    onerror: function() {
-      isSpeaking = false;
-      readBtn.classList.remove('speaking');
-      readBtn.textContent = '🔊 听我朗读';
-    }
-  });
-});
-
-// ===== Character Cards =====
-const cardChars = [
-  { char: '约', pinyin: 'yuē', meaning: '邀请、约请。比如"我约你去公园玩"就是邀请你的意思。' },
-  { char: '蛙', pinyin: 'wā', meaning: '青蛙，一种会"呱呱"叫的小动物，住在水边，会捉害虫。' },
-  { char: '棋', pinyin: 'qí', meaning: '下棋用的棋子。象棋、围棋都是棋，可以和朋友一起玩！' }
-];
-
-const cardsGrid = document.getElementById('cardsGrid');
-
-function renderCards() {
-  cardsGrid.innerHTML = '';
-  cardChars.forEach((item, index) => {
-    const card = document.createElement('div');
-    card.className = 'flip-card';
-    card.dataset.index = index;
-    card.innerHTML = `
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <div class="char">${item.char}</div>
-          <div class="pinyin-label">${item.pinyin}</div>
-        </div>
-        <div class="flip-card-back">
-          <p>${item.meaning}</p>
-        </div>
-      </div>
-    `;
-    card.addEventListener('click', function() {
-      this.classList.toggle('flipped');
+// 从ruby中提取拼音
+function getPinyinMap() {
+    const map = {};
+    document.querySelectorAll('.poem-text ruby').forEach(ruby => {
+        const char = ruby.childNodes[0]?.textContent?.trim() || '';
+        const py = ruby.querySelector('rt')?.textContent?.trim() || '';
+        if (char && py) map[char] = py;
     });
-    cardsGrid.appendChild(card);
-  });
-}
-renderCards();
-
-// ===== Fill-in-the-blank Game =====
-const gameTextEl = document.getElementById('gameText');
-const optionsWrap = document.getElementById('optionsWrap');
-const gameSuccess = document.getElementById('gameSuccess');
-const starsAnim = document.getElementById('starsAnim');
-const resetBtn = document.getElementById('resetGameBtn');
-
-// Original characters for the poem (remove punctuation and whitespace)
-const allChars = POEM.fullText.replace(/[，。、！？\n\r\s]/g, '').split('');
-
-// Pick blanks: choose 3 specific chars from the poem
-function getBlankChars() {
-  // Always pick interesting characters: 约, 蛙, 棋 (appear in the poem)
-  const blanks = ['约', '蛙', '棋'];
-  return blanks;
+    return map;
 }
 
-let blankChars = [];
-let blankPositions = [];
-let currentFilled = {};
-let correctCount = 0;
+// 渲染卡片
+function renderCards() {
+    const grid = document.getElementById('cardsGrid');
+    const pinyinMap = getPinyinMap();
+    
+    cards.forEach(card => {
+        const py = pinyinMap[card.char] || '';
+        const div = document.createElement('div');
+        div.className = 'flip-card';
+        div.innerHTML = '<div class="flip-card-inner">' +
+            '<div class="flip-card-front">' +
+                '<div class="char">' + card.char + '</div>' +
+                '<div class="char-pinyin">' + py + '</div>' +
+            '</div>' +
+            '<div class="flip-card-back">' + card.meaning + '</div>' +
+        '</div>';
+        div.addEventListener('click', function() {
+            this.classList.toggle('flipped');
+        });
+        grid.appendChild(div);
+    });
+}
+
+// 填空游戏
+const blanks = [[0, 6, "酥"], [1, 3, "年"], [1, 11, "柳"]];
+
+let currentFilled = 0;
+let slots = [];
 
 function initGame() {
-  blankChars = getBlankChars();
-  blankPositions = [];
-  currentFilled = {};
-  correctCount = 0;
-  gameSuccess.classList.remove('show');
-  starsAnim.classList.remove('show');
-
-  // Find positions of blank characters in the full text
-  const text = POEM.fullText.replace(/[，。、！？\n\r\s]/g, '');
-  const charArray = text.split('');
-
-  // For each blank char, find its position(s) - take first occurrence
-  blankChars.forEach(ch => {
-    let found = false;
-    // Try to find a unique position
-    for (let i = 0; i < charArray.length; i++) {
-      if (charArray[i] === ch && !blankPositions.includes(i)) {
-        blankPositions.push(i);
-        found = true;
-        break;
-      }
-    }
-    if (!found) {
-      // fallback: find any occurrence
-      const idx = charArray.indexOf(ch);
-      if (idx >= 0) blankPositions.push(idx);
-    }
-  });
-
-  // Sort positions (left to right)
-  blankPositions.sort((a, b) => a - b);
-
-  renderGameText(charArray);
-  renderOptions();
-
-  // Update blank count for success check
-  correctCount = 0;
-}
-
-function renderGameText(charArray) {
-  // Insert blank markers at blank positions
-  const displayText = POEM.fullText;
-  // Build line by line with blanks
-  let lines = POEM.lines.map(line => {
-    // Get chars of this line (no punctuation)
-    const lineChars = line.replace(/[，。、！？]/g, '');
-    // Build the display for this line
-    let result = '';
-    const punctMap = {};
-    let punctIdx = 0;
-    for (let c of line) {
-      if (/[，。、！？]/.test(c)) {
-        punctMap[punctIdx] = c;
-        punctIdx++;
-      }
-    }
-
-    let globalIdx = 0;
-    let pCount = 0;
-    // Count total chars before this line
-    for (let i = 0; i < POEM.lines.indexOf(line); i++) {
-      globalIdx += POEM.lines[i].replace(/[，。、！？]/g, '').length;
-    }
-
-    let lineResult = '';
-    for (let i = 0; i < line.length; i++) {
-      const ch = line[i];
-      if (/[，。、！？]/.test(ch)) {
-        lineResult += ch;
-      } else {
-        const pos = globalIdx;
-        globalIdx++;
-        if (blankPositions.includes(pos)) {
-          const filledChar = currentFilled[pos];
-          if (filledChar) {
-            lineResult += `<span class="blank filled" data-pos="${pos}">${filledChar}</span>`;
-          } else {
-            lineResult += `<span class="blank" data-pos="${pos}">_____</span>`;
-          }
-        } else {
-          lineResult += ch;
-        }
-      }
-    }
-    return lineResult;
-  });
-
-  gameTextEl.innerHTML = lines.join('<br>');
-}
-
-function renderOptions() {
-  // Shuffle blank chars for display
-  const shuffled = [...blankChars].sort(() => Math.random() - 0.5);
-  optionsWrap.innerHTML = '';
-  
-  // Track which ones are used
-  const usedChars = Object.values(currentFilled);
-
-  shuffled.forEach(ch => {
-    const btn = document.createElement('button');
-    btn.className = 'option-btn';
-    if (usedChars.includes(ch)) {
-      // Count how many times this char has been used
-      const count = usedChars.filter(u => u === ch).length;
-      const totalNeeded = blankChars.filter(b => b === ch).length;
-      if (count >= totalNeeded) {
-        btn.classList.add('used');
-      }
-    }
-    btn.textContent = ch;
-    btn.dataset.char = ch;
-    btn.addEventListener('click', function() {
-      if (this.classList.contains('used')) return;
-      const ch = this.dataset.char;
-      placeChar(ch, this);
+    const lines = `天街小雨润如酥，草色遥看近却无。\n最是一年春好处，绝胜烟柳满皇都。`.split('\n');
+    const container = document.getElementById('blankText');
+    const candidatesDiv = document.getElementById('candidateBtns');
+    
+    container.innerHTML = '';
+    candidatesDiv.innerHTML = '';
+    currentFilled = 0;
+    slots = [];
+    
+    lines.forEach((line, li) => {
+        if (li > 0) container.appendChild(document.createElement('br'));
+        [...line].forEach(c => {
+            const match = blanks.find(([bl, bc, ch]) => bl === li && bl === bl && ch === c);
+            if (match && match[0] === li && line.indexOf(c) === line.indexOf(c)) {
+                // 用位置精确匹配
+                const exactMatch = blanks.filter(([bl, bc, _]) => bl === li);
+                let isBlank = false;
+                let ci = [...line].indexOf(c);
+                for (let m of exactMatch) {
+                    if (m[1] === ci && m[2] === c) { isBlank = true; break; }
+                }
+                // 简化做法：按出现顺序填
+            }
+            container.appendChild(document.createTextNode(c));
+        });
     });
-    optionsWrap.appendChild(btn);
-  });
+    
+    // 重置候选按钮
+    initBlankGame(lines, container, candidatesDiv);
 }
 
-function placeChar(ch, btn) {
-  // Find the first empty blank that expects this char
-  let placed = false;
-  for (let pos of blankPositions) {
-    if (!currentFilled[pos]) {
-      // Check if this position expects this character
-      const text = POEM.fullText.replace(/[，。、！？\n\r\s]/g, '');
-      const expectedChar = text[pos];
-      if (expectedChar === ch) {
-        currentFilled[pos] = ch;
-        placed = true;
-        break;
-      }
-    }
-  }
-
-  if (placed) {
-    // Mark button as used
-    const usedCount = Object.values(currentFilled).filter(v => v === ch).length;
-    const totalNeeded = blankChars.filter(b => b === ch).length;
-    if (usedCount >= totalNeeded) {
-      btn.classList.add('used');
-    }
-
-    // Re-render game text
-    const text = POEM.fullText.replace(/[，。、！？\n\r\s]/g, '');
-    renderGameText(text.split(''));
-    renderOptions();
-
-    // Check if all filled
-    if (Object.keys(currentFilled).length === blankPositions.length) {
-      gameSuccess.classList.add('show');
-      starsAnim.classList.add('show');
-      // Confetti-like animation
-      setTimeout(() => {
-        starsAnim.textContent = '🌟 ⭐ ✨ 🌟 ⭐ ✨';
-      }, 300);
-    }
-  }
+function initBlankGame(lines, container, candidatesDiv) {
+    // 清理container
+    container.innerHTML = '';
+    let charIdx = 0;
+    let blankIdx = 0;
+    
+    lines.forEach((line, li) => {
+        if (li > 0) container.appendChild(document.createElement('br'));
+        const chars = [...line];
+        chars.forEach((c, ci) => {
+            const isBlank = blanks.some(([bl, bc, ch]) => bl === li && bc === ci);
+            if (isBlank) {
+                const span = document.createElement('span');
+                span.className = 'blank-slot';
+                span.dataset.char = c;
+                span.dataset.filled = 'false';
+                span.textContent = '______';
+                container.appendChild(span);
+                slots.push(span);
+            } else {
+                container.appendChild(document.createTextNode(c));
+            }
+        });
+    });
+    
+    // 获取所有需要填空的字符并去重
+    const chars = [...new Set(blanks.map(b => b[2]))];
+    chars.sort(() => Math.random() - 0.5);
+    
+    chars.forEach(c => {
+        const btn = document.createElement('button');
+        btn.className = 'candidate-btn';
+        btn.textContent = c;
+        btn.onclick = () => fillBlank(c, btn);
+        candidatesDiv.appendChild(btn);
+    });
 }
 
-resetBtn.addEventListener('click', function() {
-  initGame();
+function fillBlank(char, btn) {
+    const emptySlot = slots.find(s => s.dataset.filled === 'false');
+    if (!emptySlot) return;
+    
+    if (emptySlot.dataset.char === char) {
+        emptySlot.textContent = char;
+        emptySlot.className = 'blank-slot filled';
+        emptySlot.dataset.filled = 'true';
+        btn.disabled = true;
+        currentFilled++;
+        
+        if (currentFilled === slots.length) {
+            setTimeout(showCelebrate, 400);
+        }
+    } else {
+        emptySlot.style.borderBottomColor = '#f44336';
+        setTimeout(() => {
+            emptySlot.style.borderBottomColor = '#00bfa5';
+        }, 500);
+    }
+}
+
+function resetGame() {
+    currentFilled = 0;
+    slots = [];
+    const lines = `天街小雨润如酥，草色遥看近却无。\n最是一年春好处，绝胜烟柳满皇都。`.split('\n');
+    const container = document.getElementById('blankText');
+    const candidatesDiv = document.getElementById('candidateBtns');
+    container.innerHTML = '';
+    candidatesDiv.innerHTML = '';
+    initBlankGame(lines, container, candidatesDiv);
+}
+
+function showCelebrate() {
+    document.getElementById('celebrateOverlay').classList.add('show');
+    createConfetti();
+}
+
+function closeCelebrate() {
+    document.getElementById('celebrateOverlay').classList.remove('show');
+    resetGame();
+}
+
+function createConfetti() {
+    const container = document.createElement('div');
+    container.className = 'confetti-container';
+    document.body.appendChild(container);
+    
+    const colors = ['#00bfa5', '#80cbc4', '#ffcdd2', '#e0f2f1', '#1de9b6', '#00897b'];
+    for (let i = 0; i < 50; i++) {
+        const el = document.createElement('div');
+        el.className = 'confetti';
+        el.style.left = Math.random() * 100 + '%';
+        el.style.top = '-10px';
+        el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        el.style.width = (Math.random() * 8 + 5) + 'px';
+        el.style.height = (Math.random() * 8 + 5) + 'px';
+        el.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+        el.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        el.style.animationDelay = Math.random() * 0.5 + 's';
+        container.appendChild(el);
+    }
+    setTimeout(() => container.remove(), 4000);
+}
+
+document.addEventListener('DOMContentLoaded', renderCards);
+document.addEventListener('DOMContentLoaded', () => {
+    const lines = `天街小雨润如酥，草色遥看近却无。\n最是一年春好处，绝胜烟柳满皇都。`.split('\n');
+    const container = document.getElementById('blankText');
+    const candidatesDiv = document.getElementById('candidateBtns');
+    initBlankGame(lines, container, candidatesDiv);
 });
-
-// ===== Init =====
-initGame();
-
-// ===== Responsive fix for cards =====
-window.addEventListener('resize', function() {
-  // no-op, CSS handles it
-});
-
-console.log('📜 早春呈水部张十八员外 — 韩愈 | 页面已加载！');
 </script>
-
 </body>
 </html>
