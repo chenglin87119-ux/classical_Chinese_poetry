@@ -1,0 +1,7 @@
+# 临时Python脚本（已无需保留）
+*.py
+!poems_data.json
+
+# 系统文件
+.DS_Store
+Thumbs.db
