@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>峨眉山月歌 — 李白</title>
+<script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'ZCOOL XiaoWei', 'KaiTi', '楷体', 'STKaiti', serif;
+    background: linear-gradient(160deg, #fdf6e3 0%, #f5e6c8 50%, #e8d5a3 100%);
+    min-height: 100vh;
+    padding: 0 16px 40px;
+    color: #3d2e1e;
+  }
+
+  /* ===== Decorative background elements ===== */
+  body::before, body::after {
+    content: '';
+    position: fixed;
+    pointer-events: none;
+    opacity: 0.08;
+    z-index: 0;
+  }
+  body::before {
+    top: 40px; left: 20px;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, #D4A017 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  body::after {
+    bottom: 60px; right: 20px;
+    width: 100px; height: 100px;
+    background: radial-gradient(circle, #D4A017 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ===== Top Nav ===== */
+  .top-nav {
+    padding: 16px 0 8px;
+    font-size: 18px;
+  }
+  .top-nav a {
+    text-decoration: none;
+    color: #D4A017;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.6);
+    padding: 6px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(212,160,23,0.12);
+  }
+  .top-nav a:hover {
+    background: #D4A017;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(212,160,23,0.3);
+  }
+
+  /* ===== Poem Title Section ===== */
+  .poem-header {
+    text-align: center;
+    padding: 28px 0 10px;
+    position: relative;
+  }
+  .poem-header::after {
+    content: '🐸 ✦ ♟ ✦ 🏮';
+    display: block;
+    font-size: 22px;
+    letter-spacing: 6px;
+    margin-top: 6px;
+    opacity: 0.5;
+  }
+  .poem-title {
+    font-family: 'Ma Shan Zheng', 'KaiTi', '楷体', serif;
+    font-size: 48px;
+    color: #7A5E0E;
+    text-shadow: 2px 2px 0 rgba(212,160,23,0.3);
+    line-height: 1.2;
+  }
+  .poem-subtitle {
+    font-size: 18px;
+    color: #8a7a5a;
+    margin-top: 4px;
+    letter-spacing: 2px;
+  }
+
+  /* ===== Poem Text ===== */
+  .poem-text {
+    text-align: center;
+    padding: 24px 20px;
+    background: rgba(255,255,255,0.45);
+    border-radius: 24px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 20px rgba(212,160,23,0.08);
+    margin: 16px 0;
+    border: 2px solid rgba(212,160,23,0.12);
+  }
+  .poem-text p {
+    font-size: 26px;
+    line-height: 2.6;
+    letter-spacing: 4px;
+    color: #3d2e1e;
+  }
+  .poem-text p + p {
+    margin-top: 4px;
+  }
+  .poem-text ruby {
+    ruby-align: center;
+  }
+  .poem-text ruby rt {
+    font-size: 13px;
+    color: #7a6a4a;
+    letter-spacing: 0;
+    font-weight: normal;
+  }
+
+  /* ===== Read Aloud Button ===== */
+  .read-btn-wrap {
+    text-align: center;
+    margin: 12px 0 20px;
+  }
+  .read-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 40px;
+    font-size: 22px;
+    font-family: inherit;
+    background: linear-gradient(135deg, #D4A017, #E8B83A);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(212,160,23,0.35);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .read-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+  }
+  .read-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 24px rgba(212,160,23,0.45);
+  }
+  .read-btn:active {
+    transform: scale(0.97);
+  }
+  .read-btn.speaking {
+    animation: pulse 1s ease-in-out infinite;
+  }
+  .read-btn.speaking::after {
+    transform: translateX(100%);
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 16px rgba(212,160,23,0.35); transform: scale(1); }
+    50% { box-shadow: 0 4px 32px rgba(212,160,23,0.6); transform: scale(1.04); }
+  }
+
+  /* ===== Notes & Translation ===== */
+  .info-section {
+    background: rgba(255,255,255,0.45);
+    border-radius: 20px;
+    padding: 20px 22px;
+    margin: 12px 0;
+    backdrop-filter: blur(4px);
+    border: 2px solid rgba(212,160,23,0.12);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .info-section .label {
+    font-size: 16px;
+    color: #8a7a5a;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+    letter-spacing: 2px;
+  }
+  .info-section .label .emoji-icon {
+    font-size: 20px;
+  }
+  .info-section p {
+    font-size: 19px;
+    line-height: 1.7;
+    color: #4a3a2a;
+  }
+
+  /* ===== Character Cards ===== */
+  .cards-section {
+    margin: 16px 0;
+  }
+  .cards-section h3 {
+    font-size: 20px;
+    color: #7A5E0E;
+    text-align: center;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+  .cards-grid {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .flip-card {
+    width: 120px;
+    height: 160px;
+    perspective: 800px;
+    cursor: pointer;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.23,1,0.32,1);
+    transform-style: preserve-3d;
+  }
+  .flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    backface-visibility: hidden;
+    border: 2px solid rgba(212,160,23,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  .flip-card-front {
+    background: linear-gradient(145deg, #faf8f0, #f0e8d0);
+    color: #3d2e1e;
+  }
+  .flip-card-front .char {
+    font-size: 52px;
+    font-family: 'Ma Shan Zheng', 'KaiTi', serif;
+    line-height: 1;
+  }
+  .flip-card-front .pinyin-label {
+    font-size: 16px;
+    color: #7a6a4a;
+    margin-top: 4px;
+  }
+  .flip-card-back {
+    background: linear-gradient(145deg, #D4A017, #E8B83A);
+    color: #fff;
+    transform: rotateY(180deg);
+    padding: 12px;
+    text-align: center;
+  }
+  .flip-card-back p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  /* ===== Fill-in-the-blank Game ===== */
+  .game-section {
+    background: rgba(255,255,255,0.5);
+    border-radius: 24px;
+    padding: 20px;
+    margin: 16px 0;
+    backdrop-filter: blur(4px);
+    border: 2px solid rgba(212,160,23,0.12);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .game-section h3 {
+    font-size: 20px;
+    color: #7A5E0E;
+    text-align: center;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+  .game-text {
+    font-size: 24px;
+    text-align: center;
+    line-height: 2.2;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+    color: #3d2e1e;
+  }
+  .game-text .blank {
+    display: inline-block;
+    min-width: 50px;
+    border-bottom: 3px dashed #b8a88a;
+    margin: 0 2px;
+    padding: 0 6px;
+    color: #D4A017;
+    font-weight: bold;
+    transition: all 0.3s;
+  }
+  .game-text .blank.filled {
+    border-bottom-color: #D4A017;
+    animation: popFill 0.3s ease;
+  }
+  @keyframes popFill {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); color: #D4A017; }
+    100% { transform: scale(1); }
+  }
+  .options-wrap {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 12px 0;
+  }
+  .option-btn {
+    width: 54px;
+    height: 54px;
+    font-size: 28px;
+    font-family: 'Ma Shan Zheng', 'KaiTi', serif;
+    background: linear-gradient(145deg, #faf8f0, #f0e8d0);
+    border: 2px solid rgba(212,160,23,0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.25s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .option-btn:hover {
+    transform: scale(1.1);
+    border-color: #D4A017;
+    box-shadow: 0 4px 16px rgba(212,160,23,0.25);
+  }
+  .option-btn:active {
+    transform: scale(0.92);
+  }
+  .option-btn.used {
+    opacity: 0.3;
+    cursor: default;
+    transform: scale(0.85);
+    pointer-events: none;
+  }
+  .game-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+  .reset-btn {
+    padding: 8px 24px;
+    font-size: 16px;
+    font-family: inherit;
+    background: linear-gradient(135deg, #D4A017, #E8B83A);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(212,160,23,0.3);
+    transition: all 0.3s;
+  }
+  .reset-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 18px rgba(212,160,23,0.4);
+  }
+  .game-success {
+    font-size: 28px;
+    color: #D4A017;
+    font-weight: bold;
+    display: none;
+    animation: successPop 0.6s ease;
+  }
+  .game-success.show {
+    display: inline-block;
+  }
+  @keyframes successPop {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .stars-anim {
+    display: none;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 8px;
+    animation: starsSparkle 1.2s ease infinite alternate;
+  }
+  .stars-anim.show {
+    display: block;
+  }
+  @keyframes starsSparkle {
+    0% { transform: scale(1); letter-spacing: 2px; }
+    100% { transform: scale(1.05); letter-spacing: 8px; }
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 480px) {
+    .poem-title { font-size: 36px; }
+    .poem-text p { font-size: 22px; line-height: 2.4; }
+    .poem-text ruby rt { font-size: 11px; }
+    .flip-card { width: 100px; height: 140px; }
+    .flip-card-front .char { font-size: 42px; }
+    .game-text { font-size: 20px; }
+    .option-btn { width: 46px; height: 46px; font-size: 24px; }
+    .read-btn { font-size: 18px; padding: 12px 30px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ===== 1. Top Nav ===== -->
+  <div class="top-nav">
+    <a href="index.html">🏠 返回日历</a>
+  </div>
+
+  <!-- ===== 2. Poem Title ===== -->
+  <div class="poem-header">
+    <div class="poem-title">峨眉山月歌</div>
+    <div class="poem-subtitle">唐 · 李白</div>
+  </div>
+
+  <!-- ===== 3. Poem Text with Ruby ===== -->
+  <div class="poem-text">
+    <p>
+      <ruby>峨<rt>e2</rt></ruby><ruby>眉<rt>mei2</rt></ruby><ruby>山<rt>shan1</rt></ruby><ruby>月<rt>yue4</rt></ruby><ruby>半<rt>ban4</rt></ruby><ruby>轮<rt>lun2</rt></ruby><ruby>秋<rt>qiu1</rt></ruby>，<ruby>影<rt>ying3</rt></ruby><ruby>入<rt>ru4</rt></ruby><ruby>平<rt>ping2</rt></ruby><ruby>羌<rt>qiang1</rt></ruby><ruby>江<rt>jiang1</rt></ruby><ruby>水<rt>shui3</rt></ruby><ruby>流<rt>liu2</rt></ruby>。
+    </p>
+    <p>
+      <ruby>夜<rt>fa1</rt></ruby><ruby>发<rt>qing1</rt></ruby><ruby>清<rt>xi1</rt></ruby><ruby>溪<rt>xiang4</rt></ruby><ruby>向<rt>san1</rt></ruby><ruby>三<rt>xia2</rt></ruby><ruby>峡<rt>，</rt></ruby>，<ruby>思<rt>jun1</rt></ruby><ruby>君<rt>bu2</rt></ruby><ruby>不<rt>jian4</rt></ruby><ruby>见<rt>xia4</rt></ruby><ruby>下<rt>yu2</rt></ruby><ruby>渝<rt>zhou1</rt></ruby><ruby>州<rt>。</rt></ruby>
+    </p>
+</div>
+
+  <!-- ===== 4. Read Aloud Button ===== -->
+  <div class="read-btn-wrap">
+    <button class="read-btn" id="readBtn">🔊 听我朗读</button>
+  </div>
+
+  <!-- ===== 5. Notes ===== -->
+  <div class="info-section">
+    <span class="label"><span class="emoji-icon">💡</span> 小注释</span>
+    <p>
+      《峨眉山月歌》是唐诗人李白的作品。
+    </p>
+  </div>
+
+  <!-- ===== 6. Translation ===== -->
+  <div class="info-section">
+    <span class="label"><span class="emoji-icon">📖</span> 白话译文</span>
+    <p>
+      （注释和译文待生成）
+    </p>
+  </div>
+
+  <!-- ===== 7. Character Cards ===== -->
+  <div class="cards-section">
+    <h3>📖 识字卡片</h3>
+    <div class="cards-grid" id="cardsGrid"></div>
+  </div>
+
+  <!-- ===== 8. Fill-in-the-blank Game ===== -->
+  <div class="game-section">
+    <h3>✍️ 填空小游戏</h3>
+    <div class="game-text" id="gameText"></div>
+    <div class="options-wrap" id="optionsWrap"></div>
+    <div class="game-footer">
+      <button class="reset-btn" id="resetGameBtn">🔄 重新开始</button>
+      <span class="game-success" id="gameSuccess">好棒！🌟</span>
+    </div>
+    <div class="stars-anim" id="starsAnim">✨ 🌟 ⭐ ✨ 🌟</div>
+  </div>
+
+</div>
+
+<script>
+// ===== Poem Data =====
+const POEM = {
+  title: "峨眉山月歌",
+  author: "李白",
+  dynasty: "唐",
+  fullText: "峨眉山月半轮秋，影入平羌江水流。夜发清溪向三峡，思君不见下渝州。",
+  lines: ["峨眉山月半轮秋，影入平羌江水流。", "夜发清溪向三峡，思君不见下渝州。"]
+};
+
+// ===== Read Aloud =====
+const readBtn = document.getElementById('readBtn');
+let isSpeaking = false;
+
+readBtn.addEventListener('click', function() {
+  if (isSpeaking) {
+    responsiveVoice.cancel();
+    isSpeaking = false;
+    readBtn.classList.remove('speaking');
+    readBtn.textContent = '🔊 听我朗读';
+    return;
+  }
+
+  const text = POEM.fullText;
+  if (typeof responsiveVoice !== 'undefined' && responsiveVoice.isPlaying) {
+    responsiveVoice.cancel();
+  }
+
+  readBtn.classList.add('speaking');
+  readBtn.textContent = '⏹ 停止';
+  isSpeaking = true;
+
+  responsiveVoice.speak(text, 'Chinese Female', {
+    rate: 0.8,
+    pitch: 1.0,
+    onend: function() {
+      isSpeaking = false;
+      readBtn.classList.remove('speaking');
+      readBtn.textContent = '🔊 听我朗读';
+    },
+    onerror: function() {
+      isSpeaking = false;
+      readBtn.classList.remove('speaking');
+      readBtn.textContent = '🔊 听我朗读';
+    }
+  });
+});
+
+// ===== Character Cards =====
+const cardChars = [
+  { char: '约', pinyin: 'yuē', meaning: '邀请、约请。比如"我约你去公园玩"就是邀请你的意思。' },
+  { char: '蛙', pinyin: 'wā', meaning: '青蛙，一种会"呱呱"叫的小动物，住在水边，会捉害虫。' },
+  { char: '棋', pinyin: 'qí', meaning: '下棋用的棋子。象棋、围棋都是棋，可以和朋友一起玩！' }
+];
+
+const cardsGrid = document.getElementById('cardsGrid');
+
+function renderCards() {
+  cardsGrid.innerHTML = '';
+  cardChars.forEach((item, index) => {
+    const card = document.createElement('div');
+    card.className = 'flip-card';
+    card.dataset.index = index;
+    card.innerHTML = `
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="char">${item.char}</div>
+          <div class="pinyin-label">${item.pinyin}</div>
+        </div>
+        <div class="flip-card-back">
+          <p>${item.meaning}</p>
+        </div>
+      </div>
+    `;
+    card.addEventListener('click', function() {
+      this.classList.toggle('flipped');
+    });
+    cardsGrid.appendChild(card);
+  });
+}
+renderCards();
+
+// ===== Fill-in-the-blank Game =====
+const gameTextEl = document.getElementById('gameText');
+const optionsWrap = document.getElementById('optionsWrap');
+const gameSuccess = document.getElementById('gameSuccess');
+const starsAnim = document.getElementById('starsAnim');
+const resetBtn = document.getElementById('resetGameBtn');
+
+// Original characters for the poem (remove punctuation and whitespace)
+const allChars = POEM.fullText.replace(/[，。、！？\n\r\s]/g, '').split('');
+
+// Pick blanks: choose 3 specific chars from the poem
+function getBlankChars() {
+  // Always pick interesting characters: 约, 蛙, 棋 (appear in the poem)
+  const blanks = ['约', '蛙', '棋'];
+  return blanks;
+}
+
+let blankChars = [];
+let blankPositions = [];
+let currentFilled = {};
+let correctCount = 0;
+
+function initGame() {
+  blankChars = getBlankChars();
+  blankPositions = [];
+  currentFilled = {};
+  correctCount = 0;
+  gameSuccess.classList.remove('show');
+  starsAnim.classList.remove('show');
+
+  // Find positions of blank characters in the full text
+  const text = POEM.fullText.replace(/[，。、！？\n\r\s]/g, '');
+  const charArray = text.split('');
+
+  // For each blank char, find its position(s) - take first occurrence
+  blankChars.forEach(ch => {
+    let found = false;
+    // Try to find a unique position
+    for (let i = 0; i < charArray.length; i++) {
+      if (charArray[i] === ch && !blankPositions.includes(i)) {
+        blankPositions.push(i);
+        found = true;
+        break;
+      }
+    }
+    if (!found) {
+      // fallback: find any occurrence
+      const idx = charArray.indexOf(ch);
+      if (idx >= 0) blankPositions.push(idx);
+    }
+  });
+
+  // Sort positions (left to right)
+  blankPositions.sort((a, b) => a - b);
+
+  renderGameText(charArray);
+  renderOptions();
+
+  // Update blank count for success check
+  correctCount = 0;
+}
+
+function renderGameText(charArray) {
+  // Insert blank markers at blank positions
+  const displayText = POEM.fullText;
+  // Build line by line with blanks
+  let lines = POEM.lines.map(line => {
+    // Get chars of this line (no punctuation)
+    const lineChars = line.replace(/[，。、！？]/g, '');
+    // Build the display for this line
+    let result = '';
+    const punctMap = {};
+    let punctIdx = 0;
+    for (let c of line) {
+      if (/[，。、！？]/.test(c)) {
+        punctMap[punctIdx] = c;
+        punctIdx++;
+      }
+    }
+
+    let globalIdx = 0;
+    let pCount = 0;
+    // Count total chars before this line
+    for (let i = 0; i < POEM.lines.indexOf(line); i++) {
+      globalIdx += POEM.lines[i].replace(/[，。、！？]/g, '').length;
+    }
+
+    let lineResult = '';
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i];
+      if (/[，。、！？]/.test(ch)) {
+        lineResult += ch;
+      } else {
+        const pos = globalIdx;
+        globalIdx++;
+        if (blankPositions.includes(pos)) {
+          const filledChar = currentFilled[pos];
+          if (filledChar) {
+            lineResult += `<span class="blank filled" data-pos="${pos}">${filledChar}</span>`;
+          } else {
+            lineResult += `<span class="blank" data-pos="${pos}">_____</span>`;
+          }
+        } else {
+          lineResult += ch;
+        }
+      }
+    }
+    return lineResult;
+  });
+
+  gameTextEl.innerHTML = lines.join('<br>');
+}
+
+function renderOptions() {
+  // Shuffle blank chars for display
+  const shuffled = [...blankChars].sort(() => Math.random() - 0.5);
+  optionsWrap.innerHTML = '';
+  
+  // Track which ones are used
+  const usedChars = Object.values(currentFilled);
+
+  shuffled.forEach(ch => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    if (usedChars.includes(ch)) {
+      // Count how many times this char has been used
+      const count = usedChars.filter(u => u === ch).length;
+      const totalNeeded = blankChars.filter(b => b === ch).length;
+      if (count >= totalNeeded) {
+        btn.classList.add('used');
+      }
+    }
+    btn.textContent = ch;
+    btn.dataset.char = ch;
+    btn.addEventListener('click', function() {
+      if (this.classList.contains('used')) return;
+      const ch = this.dataset.char;
+      placeChar(ch, this);
+    });
+    optionsWrap.appendChild(btn);
+  });
+}
+
+function placeChar(ch, btn) {
+  // Find the first empty blank that expects this char
+  let placed = false;
+  for (let pos of blankPositions) {
+    if (!currentFilled[pos]) {
+      // Check if this position expects this character
+      const text = POEM.fullText.replace(/[，。、！？\n\r\s]/g, '');
+      const expectedChar = text[pos];
+      if (expectedChar === ch) {
+        currentFilled[pos] = ch;
+        placed = true;
+        break;
+      }
+    }
+  }
+
+  if (placed) {
+    // Mark button as used
+    const usedCount = Object.values(currentFilled).filter(v => v === ch).length;
+    const totalNeeded = blankChars.filter(b => b === ch).length;
+    if (usedCount >= totalNeeded) {
+      btn.classList.add('used');
+    }
+
+    // Re-render game text
+    const text = POEM.fullText.replace(/[，。、！？\n\r\s]/g, '');
+    renderGameText(text.split(''));
+    renderOptions();
+
+    // Check if all filled
+    if (Object.keys(currentFilled).length === blankPositions.length) {
+      gameSuccess.classList.add('show');
+      starsAnim.classList.add('show');
+      // Confetti-like animation
+      setTimeout(() => {
+        starsAnim.textContent = '🌟 ⭐ ✨ 🌟 ⭐ ✨';
+      }, 300);
+    }
+  }
+}
+
+resetBtn.addEventListener('click', function() {
+  initGame();
+});
+
+// ===== Init =====
+initGame();
+
+// ===== Responsive fix for cards =====
+window.addEventListener('resize', function() {
+  // no-op, CSS handles it
+});
+
+console.log('📜 峨眉山月歌 — 李白 | 页面已加载！');
+</script>
+
+</body>
+</html>
