@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>钱塘湖春行 — 白居易</title>
+<title>遗爱寺 — 白居易</title>
 <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&display=swap');
@@ -12,7 +12,7 @@
 
 body {
     font-family: 'Noto Serif SC', 'ZCOOL XiaoWei', serif;
-    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #fce4ec 100%);
+    background: linear-gradient(135deg, #fffde7 0%, #fff9c4 50%, #fffde7 100%);
     min-height: 100vh;
     padding: 20px;
     display: flex;
@@ -33,7 +33,7 @@ body {
 }
 
 .container::before {
-    content: '🌸';
+    content: '🌟';
     position: absolute;
     top: 10px; right: 20px;
     font-size: 36px;
@@ -42,7 +42,7 @@ body {
 }
 
 .container::after {
-    content: '🦋';
+    content: '🐤';
     position: absolute;
     bottom: 20px; left: 16px;
     font-size: 28px;
@@ -57,7 +57,7 @@ body {
 
 .back-link {
     display: inline-block;
-    color: #e91e63;
+    color: #f9a825;
     text-decoration: none;
     font-size: 16px;
     margin-bottom: 16px;
@@ -80,14 +80,14 @@ body {
 .poem-title {
     font-family: 'Ma Shan Zheng', cursive;
     font-size: 36px;
-    color: #ad1457;
+    color: #f57f17;
     margin-bottom: 4px;
     font-weight: 400;
 }
 
 .poem-subtitle {
     font-size: 16px;
-    color: #e91e63;
+    color: #f9a825;
     opacity: 0.7;
 }
 
@@ -108,7 +108,7 @@ body {
 
 .poem-text rt {
     font-size: 14px;
-    color: #e91e63;
+    color: #f9a825;
     opacity: 0.75;
     font-family: 'Noto Serif SC', serif;
 }
@@ -119,7 +119,7 @@ body {
     padding: 12px 32px;
     font-size: 18px;
     font-family: 'Noto Serif SC', serif;
-    background: linear-gradient(135deg, #e91e63, #ad1457);
+    background: linear-gradient(135deg, #f9a825, #f57f17);
     color: white;
     border: none;
     border-radius: 30px;
@@ -144,7 +144,7 @@ body {
 
 .section-title {
     font-size: 18px;
-    color: #ad1457;
+    color: #f57f17;
     margin-bottom: 8px;
 }
 
@@ -194,7 +194,7 @@ body {
 }
 
 .flip-card-front {
-    background: linear-gradient(135deg, #f8bbd0, #f48fb1);
+    background: linear-gradient(135deg, #fff9c4, #ffe082);
     color: white;
 }
 
@@ -213,7 +213,7 @@ body {
 .flip-card-back {
     background: white;
     transform: rotateY(180deg);
-    border: 2px solid #f8bbd0;
+    border: 2px solid #fff9c4;
     font-size: 14px;
     line-height: 1.6;
     color: #555;
@@ -223,7 +223,7 @@ body {
 .flip-hint {
     text-align: center;
     font-size: 13px;
-    color: #e91e63;
+    color: #f9a825;
     opacity: 0.6;
     margin: 4px 0 8px;
 }
@@ -244,7 +244,7 @@ body {
 .blank-text .blank-slot {
     display: inline-block;
     min-width: 50px;
-    border-bottom: 3px dashed #e91e63;
+    border-bottom: 3px dashed #f9a825;
     margin: 0 2px;
     padding: 0 4px;
     cursor: pointer;
@@ -253,7 +253,7 @@ body {
 
 .blank-text .blank-slot.filled {
     border-bottom-style: solid;
-    color: #ad1457;
+    color: #f57f17;
     font-weight: bold;
 }
 
@@ -270,16 +270,16 @@ body {
     height: 52px;
     font-size: 26px;
     font-family: 'Ma Shan Zheng', cursive;
-    border: 3px solid #f48fb1;
+    border: 3px solid #ffe082;
     background: white;
-    color: #ad1457;
+    color: #f57f17;
     border-radius: 14px;
     cursor: pointer;
     transition: all 0.2s;
 }
 
 .candidate-btn:hover {
-    background: #fce4ec;
+    background: #fffde7;
     transform: scale(1.1);
 }
 
@@ -296,8 +296,8 @@ body {
     font-size: 16px;
     font-family: 'Noto Serif SC', serif;
     background: rgba(233, 30, 99, 0.1);
-    color: #ad1457;
-    border: 2px solid #f48fb1;
+    color: #f57f17;
+    border: 2px solid #ffe082;
     border-radius: 24px;
     cursor: pointer;
     transition: all 0.2s;
@@ -329,12 +329,12 @@ body {
 }
 
 .celebrate-box .emoji { font-size: 72px; display: block; margin-bottom: 12px; }
-.celebrate-box .msg { font-size: 28px; font-family: 'Ma Shan Zheng', cursive; color: #ad1457; }
+.celebrate-box .msg { font-size: 28px; font-family: 'Ma Shan Zheng', cursive; color: #f57f17; }
 .celebrate-box .sub-msg { font-size: 16px; color: #888; margin-top: 8px; }
 .celebrate-box .close-btn {
     margin-top: 20px; padding: 10px 32px; font-size: 18px;
     font-family: 'Noto Serif SC', serif;
-    background: linear-gradient(135deg, #e91e63, #ad1457);
+    background: linear-gradient(135deg, #f9a825, #f57f17);
     color: white; border: none; border-radius: 24px; cursor: pointer;
 }
 
@@ -378,27 +378,25 @@ body {
 <a href="https://chenglin87119-ux.github.io/classical_Chinese_poetry/" class="back-link">← 返回古诗日历</a>
 
 <div class="poem-header">
-    <div class="poem-title">钱塘湖春行</div>
+    <div class="poem-title">遗爱寺</div>
     <div class="poem-subtitle">唐 · 白居易</div>
 </div>
 
-<button class="read-btn" onclick="responsiveVoice.speak(`孤山寺北贾亭西，水面初平云脚低。 几处早莺争暖树，谁家新燕啄春泥。 乱花渐欲迷人眼，浅草才能没马蹄。 最爱湖东行不足，绿杨阴里白沙堤。`, 'Chinese Female', {rate: 0.8})">🔊 听我朗读</button>
+<button class="read-btn" onclick="responsiveVoice.speak(`弄石临溪坐，寻花绕寺行。 时时闻鸟语，处处是泉声。`, 'Chinese Female', {rate: 0.8})">🔊 听我朗读</button>
 
 <div class="poem-text">
-<ruby>孤<rt>gū</rt></ruby><ruby>山<rt>shān</rt></ruby><ruby>寺<rt>sì</rt></ruby><ruby>北<rt>běi</rt></ruby><ruby>贾<rt>jiǎ</rt></ruby><ruby>亭<rt>tíng</rt></ruby><ruby>西<rt>xī</rt></ruby>，<ruby>水<rt>shuǐ</rt></ruby><ruby>面<rt>miàn</rt></ruby><ruby>初<rt>chū</rt></ruby><ruby>平<rt>píng</rt></ruby><ruby>云<rt>yún</rt></ruby><ruby>脚<rt>jiǎo</rt></ruby><ruby>低<rt>dī</rt></ruby>。<br>
-<ruby>几<rt>jǐ</rt></ruby><ruby>处<rt>chù</rt></ruby><ruby>早<rt>zǎo</rt></ruby><ruby>莺<rt>yīng</rt></ruby><ruby>争<rt>zhēng</rt></ruby><ruby>暖<rt>nuǎn</rt></ruby><ruby>树<rt>shù</rt></ruby>，<ruby>谁<rt>shuí</rt></ruby><ruby>家<rt>jiā</rt></ruby><ruby>新<rt>xīn</rt></ruby><ruby>燕<rt>yàn</rt></ruby><ruby>啄<rt>zhuó</rt></ruby><ruby>春<rt>chūn</rt></ruby><ruby>泥<rt>ní</rt></ruby>。<br>
-<ruby>乱<rt>luàn</rt></ruby><ruby>花<rt>huā</rt></ruby><ruby>渐<rt>jiàn</rt></ruby><ruby>欲<rt>yù</rt></ruby><ruby>迷<rt>mí</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>眼<rt>yǎn</rt></ruby>，<ruby>浅<rt>qiǎn</rt></ruby><ruby>草<rt>cǎo</rt></ruby><ruby>才<rt>cái</rt></ruby><ruby>能<rt>néng</rt></ruby><ruby>没<rt>méi</rt></ruby><ruby>马<rt>mǎ</rt></ruby><ruby>蹄<rt>tí</rt></ruby>。<br>
-<ruby>最<rt>zuì</rt></ruby><ruby>爱<rt>ài</rt></ruby><ruby>湖<rt>hú</rt></ruby><ruby>东<rt>dōng</rt></ruby><ruby>行<rt>xíng</rt></ruby><ruby>不<rt>bù</rt></ruby><ruby>足<rt>zú</rt></ruby>，<ruby>绿<rt>lǜ</rt></ruby><ruby>杨<rt>yáng</rt></ruby><ruby>阴<rt>yīn</rt></ruby><ruby>里<rt>lǐ</rt></ruby><ruby>白<rt>bái</rt></ruby><ruby>沙<rt>shā</rt></ruby><ruby>堤<rt>dī</rt></ruby>。
+<ruby>弄<rt>nòng</rt></ruby><ruby>石<rt>shí</rt></ruby><ruby>临<rt>lín</rt></ruby><ruby>溪<rt>xī</rt></ruby><ruby>坐<rt>zuò</rt></ruby>，<ruby>寻<rt>xún</rt></ruby><ruby>花<rt>huā</rt></ruby><ruby>绕<rt>rào</rt></ruby><ruby>寺<rt>sì</rt></ruby><ruby>行<rt>xíng</rt></ruby>。<br>
+<ruby>时<rt>shí</rt></ruby><ruby>时<rt>shí</rt></ruby><ruby>闻<rt>wén</rt></ruby><ruby>鸟<rt>niǎo</rt></ruby><ruby>语<rt>yǔ</rt></ruby>，<ruby>处<rt>chù</rt></ruby><ruby>处<rt>chù</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>泉<rt>quán</rt></ruby><ruby>声<rt>shēng</rt></ruby>。
 </div>
 
 <div class="section">
     <div class="section-title">💡 小注释</div>
-    <div class="section-content">《钱塘湖春行》是唐诗人白居易的作品。西湖早春，莺争暖树，燕啄春泥。</div>
+    <div class="section-content">《遗爱寺》是唐诗人白居易的作品。弄石临溪坐，寻花绕寺行。</div>
 </div>
 
 <div class="section">
     <div class="section-title">📖 白话译文</div>
-    <div class="section-content">孤山寺北贾亭西，湖面春水刚与堤平。几处早莺争暖树，谁家新燕啄春泥。</div>
+    <div class="section-content">坐在溪边玩弄石子，绕着寺庙寻找花朵。鸟儿声声，流水潺潺。</div>
 </div>
 
 <div class="section">
@@ -429,7 +427,7 @@ body {
 
 <script>
 // 识字卡片数据
-const cards = [{"char": "沙", "meaning": "「沙」是一个汉字，多读几遍记住它吧！"}, {"char": "处", "meaning": "「处」是一个汉字，多读几遍记住它吧！"}, {"char": "白", "meaning": "白色，像雪一样的颜色。"}];
+const cards = [{"char": "寺", "meaning": "「寺」是一个汉字，多读几遍记住它吧！"}, {"char": "是", "meaning": "「是」是一个汉字，多读几遍记住它吧！"}, {"char": "处", "meaning": "「处」是一个汉字，多读几遍记住它吧！"}];
 
 // 从ruby中提取拼音
 function getPinyinMap() {
@@ -466,13 +464,13 @@ function renderCards() {
 }
 
 // 填空游戏
-const blanks = [[1, 3, "莺"], [2, 0, "乱"]];
+const blanks = [[0, 9, "寺"], [1, 0, "时"], [1, 9, "泉"]];
 
 let currentFilled = 0;
 let slots = [];
 
 function initGame() {
-    const lines = `孤山寺北贾亭西，水面初平云脚低。\n几处早莺争暖树，谁家新燕啄春泥。\n乱花渐欲迷人眼，浅草才能没马蹄。\n最爱湖东行不足，绿杨阴里白沙堤。`.split('\n');
+    const lines = `弄石临溪坐，寻花绕寺行。\n时时闻鸟语，处处是泉声。`.split('\n');
     const container = document.getElementById('blankText');
     const candidatesDiv = document.getElementById('candidateBtns');
     
@@ -558,7 +556,7 @@ function fillBlank(char, btn) {
     } else {
         emptySlot.style.borderBottomColor = '#f44336';
         setTimeout(() => {
-            emptySlot.style.borderBottomColor = '#e91e63';
+            emptySlot.style.borderBottomColor = '#f9a825';
         }, 500);
     }
 }
@@ -566,7 +564,7 @@ function fillBlank(char, btn) {
 function resetGame() {
     currentFilled = 0;
     slots = [];
-    const lines = `孤山寺北贾亭西，水面初平云脚低。\n几处早莺争暖树，谁家新燕啄春泥。\n乱花渐欲迷人眼，浅草才能没马蹄。\n最爱湖东行不足，绿杨阴里白沙堤。`.split('\n');
+    const lines = `弄石临溪坐，寻花绕寺行。\n时时闻鸟语，处处是泉声。`.split('\n');
     const container = document.getElementById('blankText');
     const candidatesDiv = document.getElementById('candidateBtns');
     container.innerHTML = '';
@@ -589,7 +587,7 @@ function createConfetti() {
     container.className = 'confetti-container';
     document.body.appendChild(container);
     
-    const colors = ['#e91e63', '#f48fb1', '#ffcdd2', '#fce4ec', '#ff4081', '#ad1457'];
+    const colors = ['#f9a825', '#ffe082', '#ffcdd2', '#fffde7', '#ffd54f', '#f57f17'];
     for (let i = 0; i < 50; i++) {
         const el = document.createElement('div');
         el.className = 'confetti';
@@ -608,7 +606,7 @@ function createConfetti() {
 
 document.addEventListener('DOMContentLoaded', renderCards);
 document.addEventListener('DOMContentLoaded', () => {
-    const lines = `孤山寺北贾亭西，水面初平云脚低。\n几处早莺争暖树，谁家新燕啄春泥。\n乱花渐欲迷人眼，浅草才能没马蹄。\n最爱湖东行不足，绿杨阴里白沙堤。`.split('\n');
+    const lines = `弄石临溪坐，寻花绕寺行。\n时时闻鸟语，处处是泉声。`.split('\n');
     const container = document.getElementById('blankText');
     const candidatesDiv = document.getElementById('candidateBtns');
     initBlankGame(lines, container, candidatesDiv);

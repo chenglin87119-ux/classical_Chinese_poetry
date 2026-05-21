@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>寒食 — 韩翃（hóng）</title>
+<title>塞下曲 — 卢纶</title>
 <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&display=swap');
@@ -12,7 +12,7 @@
 
 body {
     font-family: 'Noto Serif SC', 'ZCOOL XiaoWei', serif;
-    background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 50%, #e1f5fe 100%);
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 50%, #fff3e0 100%);
     min-height: 100vh;
     padding: 20px;
     display: flex;
@@ -33,7 +33,7 @@ body {
 }
 
 .container::before {
-    content: '☁️';
+    content: '🌻';
     position: absolute;
     top: 10px; right: 20px;
     font-size: 36px;
@@ -42,7 +42,7 @@ body {
 }
 
 .container::after {
-    content: '🌈';
+    content: '🦊';
     position: absolute;
     bottom: 20px; left: 16px;
     font-size: 28px;
@@ -57,7 +57,7 @@ body {
 
 .back-link {
     display: inline-block;
-    color: #0288d1;
+    color: #ff6d00;
     text-decoration: none;
     font-size: 16px;
     margin-bottom: 16px;
@@ -80,14 +80,14 @@ body {
 .poem-title {
     font-family: 'Ma Shan Zheng', cursive;
     font-size: 36px;
-    color: #01579b;
+    color: #e65100;
     margin-bottom: 4px;
     font-weight: 400;
 }
 
 .poem-subtitle {
     font-size: 16px;
-    color: #0288d1;
+    color: #ff6d00;
     opacity: 0.7;
 }
 
@@ -108,7 +108,7 @@ body {
 
 .poem-text rt {
     font-size: 14px;
-    color: #0288d1;
+    color: #ff6d00;
     opacity: 0.75;
     font-family: 'Noto Serif SC', serif;
 }
@@ -119,7 +119,7 @@ body {
     padding: 12px 32px;
     font-size: 18px;
     font-family: 'Noto Serif SC', serif;
-    background: linear-gradient(135deg, #0288d1, #01579b);
+    background: linear-gradient(135deg, #ff6d00, #e65100);
     color: white;
     border: none;
     border-radius: 30px;
@@ -144,7 +144,7 @@ body {
 
 .section-title {
     font-size: 18px;
-    color: #01579b;
+    color: #e65100;
     margin-bottom: 8px;
 }
 
@@ -194,7 +194,7 @@ body {
 }
 
 .flip-card-front {
-    background: linear-gradient(135deg, #b3e5fc, #81d4fa);
+    background: linear-gradient(135deg, #ffe0b2, #ffab91);
     color: white;
 }
 
@@ -213,7 +213,7 @@ body {
 .flip-card-back {
     background: white;
     transform: rotateY(180deg);
-    border: 2px solid #b3e5fc;
+    border: 2px solid #ffe0b2;
     font-size: 14px;
     line-height: 1.6;
     color: #555;
@@ -223,7 +223,7 @@ body {
 .flip-hint {
     text-align: center;
     font-size: 13px;
-    color: #0288d1;
+    color: #ff6d00;
     opacity: 0.6;
     margin: 4px 0 8px;
 }
@@ -244,7 +244,7 @@ body {
 .blank-text .blank-slot {
     display: inline-block;
     min-width: 50px;
-    border-bottom: 3px dashed #0288d1;
+    border-bottom: 3px dashed #ff6d00;
     margin: 0 2px;
     padding: 0 4px;
     cursor: pointer;
@@ -253,7 +253,7 @@ body {
 
 .blank-text .blank-slot.filled {
     border-bottom-style: solid;
-    color: #01579b;
+    color: #e65100;
     font-weight: bold;
 }
 
@@ -270,16 +270,16 @@ body {
     height: 52px;
     font-size: 26px;
     font-family: 'Ma Shan Zheng', cursive;
-    border: 3px solid #81d4fa;
+    border: 3px solid #ffab91;
     background: white;
-    color: #01579b;
+    color: #e65100;
     border-radius: 14px;
     cursor: pointer;
     transition: all 0.2s;
 }
 
 .candidate-btn:hover {
-    background: #e1f5fe;
+    background: #fff3e0;
     transform: scale(1.1);
 }
 
@@ -296,8 +296,8 @@ body {
     font-size: 16px;
     font-family: 'Noto Serif SC', serif;
     background: rgba(233, 30, 99, 0.1);
-    color: #01579b;
-    border: 2px solid #81d4fa;
+    color: #e65100;
+    border: 2px solid #ffab91;
     border-radius: 24px;
     cursor: pointer;
     transition: all 0.2s;
@@ -329,12 +329,12 @@ body {
 }
 
 .celebrate-box .emoji { font-size: 72px; display: block; margin-bottom: 12px; }
-.celebrate-box .msg { font-size: 28px; font-family: 'Ma Shan Zheng', cursive; color: #01579b; }
+.celebrate-box .msg { font-size: 28px; font-family: 'Ma Shan Zheng', cursive; color: #e65100; }
 .celebrate-box .sub-msg { font-size: 16px; color: #888; margin-top: 8px; }
 .celebrate-box .close-btn {
     margin-top: 20px; padding: 10px 32px; font-size: 18px;
     font-family: 'Noto Serif SC', serif;
-    background: linear-gradient(135deg, #0288d1, #01579b);
+    background: linear-gradient(135deg, #ff6d00, #e65100);
     color: white; border: none; border-radius: 24px; cursor: pointer;
 }
 
@@ -378,25 +378,25 @@ body {
 <a href="https://chenglin87119-ux.github.io/classical_Chinese_poetry/" class="back-link">← 返回古诗日历</a>
 
 <div class="poem-header">
-    <div class="poem-title">寒食</div>
-    <div class="poem-subtitle">唐 · 韩翃（hóng）</div>
+    <div class="poem-title">塞下曲</div>
+    <div class="poem-subtitle">唐 · 卢纶</div>
 </div>
 
-<button class="read-btn" onclick="responsiveVoice.speak(`春城无处不飞花，寒食东风御柳斜。 日暮汉宫传蜡烛，轻烟散入五侯家。`, 'Chinese Female', {rate: 0.8})">🔊 听我朗读</button>
+<button class="read-btn" onclick="responsiveVoice.speak(`林暗草惊风，将军夜引弓。 平明寻白羽，没在石棱中。`, 'Chinese Female', {rate: 0.8})">🔊 听我朗读</button>
 
 <div class="poem-text">
-<ruby>春<rt>chūn</rt></ruby><ruby>城<rt>chéng</rt></ruby><ruby>无<rt>wú</rt></ruby><ruby>处<rt>chǔ</rt></ruby><ruby>不<rt>bù</rt></ruby><ruby>飞<rt>fēi</rt></ruby><ruby>花<rt>huā</rt></ruby>，<ruby>寒<rt>hán</rt></ruby><ruby>食<rt>shí</rt></ruby><ruby>东<rt>dōng</rt></ruby><ruby>风<rt>fēng</rt></ruby><ruby>御<rt>yù</rt></ruby><ruby>柳<rt>liǔ</rt></ruby><ruby>斜<rt>xié</rt></ruby>。<br>
-<ruby>日<rt>rì</rt></ruby><ruby>暮<rt>mù</rt></ruby><ruby>汉<rt>hàn</rt></ruby><ruby>宫<rt>gōng</rt></ruby><ruby>传<rt>chuán</rt></ruby><ruby>蜡<rt>là</rt></ruby><ruby>烛<rt>zhú</rt></ruby>，<ruby>轻<rt>qīng</rt></ruby><ruby>烟<rt>yān</rt></ruby><ruby>散<rt>sàn</rt></ruby><ruby>入<rt>rù</rt></ruby><ruby>五<rt>wǔ</rt></ruby><ruby>侯<rt>hóu</rt></ruby><ruby>家<rt>jiā</rt></ruby>。
+<ruby>林<rt>lín</rt></ruby><ruby>暗<rt>àn</rt></ruby><ruby>草<rt>cǎo</rt></ruby><ruby>惊<rt>jīng</rt></ruby><ruby>风<rt>fēng</rt></ruby>，<ruby>将<rt>jiāng</rt></ruby><ruby>军<rt>jūn</rt></ruby><ruby>夜<rt>yè</rt></ruby><ruby>引<rt>yǐn</rt></ruby><ruby>弓<rt>gōng</rt></ruby>。<br>
+<ruby>平<rt>píng</rt></ruby><ruby>明<rt>míng</rt></ruby><ruby>寻<rt>xún</rt></ruby><ruby>白<rt>bái</rt></ruby><ruby>羽<rt>yǔ</rt></ruby>，<ruby>没<rt>méi</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>石<rt>shí</rt></ruby><ruby>棱<rt>léng</rt></ruby><ruby>中<rt>zhōng</rt></ruby>。
 </div>
 
 <div class="section">
     <div class="section-title">💡 小注释</div>
-    <div class="section-content">《寒食》是唐诗人韩翃（hóng）的作品。寒食节长安城飞花，东风把柳枝吹斜。</div>
+    <div class="section-content">《塞下曲》是唐诗人卢纶的作品。月黑雁飞高，单于夜遁逃。</div>
 </div>
 
 <div class="section">
     <div class="section-title">📖 白话译文</div>
-    <div class="section-content">暮春时节，长安城到处飞舞着杨花和柳絮。寒食节这天，东风把御苑的柳枝吹斜了。日暮时皇宫传蜡烛，轻烟飘散到王侯大臣家。</div>
+    <div class="section-content">月黑风高雁飞得高高的，单于趁着夜色逃跑。将军正要率领轻骑兵追赶，大雪落满了弓箭和刀。</div>
 </div>
 
 <div class="section">
@@ -427,7 +427,7 @@ body {
 
 <script>
 // 识字卡片数据
-const cards = [{"char": "东", "meaning": "东方，太阳升起的方向。"}, {"char": "传", "meaning": "「传」是一个汉字，多读几遍记住它吧！"}, {"char": "轻", "meaning": "「轻」是一个汉字，多读几遍记住它吧！"}];
+const cards = [{"char": "惊", "meaning": "惊讶，突然吓一跳。"}, {"char": "将", "meaning": "「将」是一个汉字，多读几遍记住它吧！"}, {"char": "弓", "meaning": "「弓」是一个汉字，多读几遍记住它吧！"}];
 
 // 从ruby中提取拼音
 function getPinyinMap() {
@@ -464,13 +464,13 @@ function renderCards() {
 }
 
 // 填空游戏
-const blanks = [[0, 6, "花"], [0, 13, "柳"], [1, 9, "烟"]];
+const blanks = [[0, 0, "林"], [1, 9, "棱"]];
 
 let currentFilled = 0;
 let slots = [];
 
 function initGame() {
-    const lines = `春城无处不飞花，寒食东风御柳斜。\n日暮汉宫传蜡烛，轻烟散入五侯家。`.split('\n');
+    const lines = `林暗草惊风，将军夜引弓。\n平明寻白羽，没在石棱中。`.split('\n');
     const container = document.getElementById('blankText');
     const candidatesDiv = document.getElementById('candidateBtns');
     
@@ -556,7 +556,7 @@ function fillBlank(char, btn) {
     } else {
         emptySlot.style.borderBottomColor = '#f44336';
         setTimeout(() => {
-            emptySlot.style.borderBottomColor = '#0288d1';
+            emptySlot.style.borderBottomColor = '#ff6d00';
         }, 500);
     }
 }
@@ -564,7 +564,7 @@ function fillBlank(char, btn) {
 function resetGame() {
     currentFilled = 0;
     slots = [];
-    const lines = `春城无处不飞花，寒食东风御柳斜。\n日暮汉宫传蜡烛，轻烟散入五侯家。`.split('\n');
+    const lines = `林暗草惊风，将军夜引弓。\n平明寻白羽，没在石棱中。`.split('\n');
     const container = document.getElementById('blankText');
     const candidatesDiv = document.getElementById('candidateBtns');
     container.innerHTML = '';
@@ -587,7 +587,7 @@ function createConfetti() {
     container.className = 'confetti-container';
     document.body.appendChild(container);
     
-    const colors = ['#0288d1', '#81d4fa', '#ffcdd2', '#e1f5fe', '#40c4ff', '#01579b'];
+    const colors = ['#ff6d00', '#ffab91', '#ffcdd2', '#fff3e0', '#ff9100', '#e65100'];
     for (let i = 0; i < 50; i++) {
         const el = document.createElement('div');
         el.className = 'confetti';
@@ -606,7 +606,7 @@ function createConfetti() {
 
 document.addEventListener('DOMContentLoaded', renderCards);
 document.addEventListener('DOMContentLoaded', () => {
-    const lines = `春城无处不飞花，寒食东风御柳斜。\n日暮汉宫传蜡烛，轻烟散入五侯家。`.split('\n');
+    const lines = `林暗草惊风，将军夜引弓。\n平明寻白羽，没在石棱中。`.split('\n');
     const container = document.getElementById('blankText');
     const candidatesDiv = document.getElementById('candidateBtns');
     initBlankGame(lines, container, candidatesDiv);
